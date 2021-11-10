@@ -33,6 +33,13 @@ public class HibernateUtil {
         configuration.addAnnotatedClass(TestEntity.class);
     }
 
+    public static SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    // prywatny konstruktor aby nikt nie robil obiektow tej klasy narzedziowej
+    private HibernateUtil() {}
+
     private static Properties loadHibernateProperties() throws IOException {
         final var properties = new Properties();
         /* metoda getClassLoader wczytuje klasy ale ma rowniez dostep do zasobow dzieki czemu bede mogl przypisac do
