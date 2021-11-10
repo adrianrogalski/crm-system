@@ -1,4 +1,4 @@
-package crm.util.entity;
+package crm.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

@@ -1,6 +1,6 @@
 package crm.util;
 
-import crm.util.entity.TestEntity;
+import crm.entity.TestEntity;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
