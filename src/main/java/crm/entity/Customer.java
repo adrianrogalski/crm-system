@@ -7,7 +7,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "customers")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "customer_type")
+@DiscriminatorColumn(name = "customer_type") // okresla nazwe kolumny okreslajca typ obiektu ktory dziedziczy po klasie
 public abstract class Customer {
     @Id
     private UUID id;
@@ -20,6 +20,7 @@ public abstract class Customer {
         return id;
     }
 
+    // potrzebne do porownywania 2 obiektow na podstawie UUID
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
