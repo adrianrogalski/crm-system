@@ -14,7 +14,8 @@ public abstract class Customer {
     @Id
     private UUID id;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id")
     private List<Address> addresses;
 
     public Customer() {
@@ -33,7 +34,7 @@ public abstract class Customer {
         }
     }
 
-    public List<Address> getAddresses() {
+    public List<Address> getAddress() {
         return new ArrayList<>(addresses);
     }
 

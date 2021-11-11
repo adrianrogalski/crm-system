@@ -3,6 +3,7 @@ package crm.entity;
 import com.neovisionaries.i18n.CountryCode;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
 import java.util.UUID;
@@ -13,7 +14,7 @@ import static java.util.Objects.*;
 @Entity
 @Table(name = "addresses")
 public class Address {
-
+    @Id
     private UUID id;
     private String street;
     private String city;
