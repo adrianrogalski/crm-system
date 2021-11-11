@@ -42,6 +42,20 @@ class PersonTest {
         assertEquals(person, readPerson);
         transaction.rollback();
     }
+    @Test
+    void shouldAddAddress() {
+        // given
+        final var customer = new Person("Jan", "Kowalski", new Pesel("23465783776"));
+        final var address = new Address("str", "Wawa", "11-300", CountryCode.PL);
+        customer.addAddress(address);
+
+        // when
+        saveAndFlush(customer);
+
+        // then
+        final var readCustomer = session.get(Customer.class, customer.getId());
+        assertEquals(customer.getAddress(), readCustomer.getAddress());
+    }
 
     // METODY POMOCNICZE
     private void saveAndFlush(Person person) {
