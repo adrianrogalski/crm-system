@@ -2,15 +2,30 @@ package crm.service;
 
 import java.util.Objects;
 
+import static java.util.Objects.requireNonNull;
+
 public class RegisterPersonForm {
+
     private final String firstName;
     private final String lastName;
     private final String pesel;
 
     public RegisterPersonForm(String firstName, String lastName, String pesel) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.pesel = pesel;
+        this.firstName = requireNonNull(firstName);
+        this.lastName = requireNonNull(lastName);
+        this.pesel = requireNonNull(pesel);
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPesel() {
+        return pesel;
     }
 
     @Override
@@ -26,15 +41,12 @@ public class RegisterPersonForm {
         return Objects.hash(firstName, lastName, pesel);
     }
 
-    public String getFirstName() {
-        return firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public String getPesel() {
-        return pesel;
+    @Override
+    public String toString() {
+        return "RegisterPersonForm{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", pesel='" + pesel + '\'' +
+                '}';
     }
 }

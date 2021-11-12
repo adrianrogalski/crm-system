@@ -33,6 +33,7 @@ public class Person extends Customer {
         this.pesel = requireNonNull(pesel, "pesel is null");
     }
 
+
     public static Person from(RegisterPersonForm form) {
         return new Person(form.getFirstName(), form.getLastName(), new Pesel(form.getPesel()));
     }

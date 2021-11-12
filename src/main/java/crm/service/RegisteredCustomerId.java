@@ -6,10 +6,15 @@ import java.util.UUID;
 import static java.util.Objects.requireNonNull;
 
 public class RegisteredCustomerId {
+
     private final UUID id;
 
     public RegisteredCustomerId(UUID id) {
         this.id = requireNonNull(id);
+    }
+
+    public UUID getId() {
+        return id;
     }
 
     @Override
@@ -23,9 +28,5 @@ public class RegisteredCustomerId {
     @Override
     public int hashCode() {
         return Objects.hash(id);
-    }
-
-    public UUID getId() {
-        return id;
     }
 }
