@@ -3,6 +3,7 @@ package crm.util;
 import crm.entity.Address;
 import crm.entity.Customer;
 import crm.entity.Person;
+import crm.entity.Pesel;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -34,6 +35,7 @@ public class HibernateUtil {
     private static void configureEntities(Configuration configuration) {
         configuration.addAnnotatedClass(Customer.class);
         configuration.addAnnotatedClass(Person.class);
+        configuration.addAnnotatedClass(Pesel.class);
         configuration.addAnnotatedClass(Address.class);
     }
 
